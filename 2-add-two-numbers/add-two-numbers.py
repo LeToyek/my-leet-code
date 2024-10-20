@@ -21,7 +21,6 @@ class Solution:
             if l2 is not None : l2 = l2.next
 
         result = head.next
-        head.next = None
         return result
 
             
