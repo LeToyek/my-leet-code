@@ -1,13 +1,16 @@
 func maxProfit(prices []int) int {
-    minPrice, maxProfit := prices[0], 0
+    minPrice := prices[0]
+    maxProfit := 0
 
-    for _, price := range prices {
-        if price < minPrice {
-            minPrice = price
-        } else if price - minPrice > maxProfit {
-            maxProfit = price - minPrice
+    for i:= 0; i<len(prices); i++{
+        if prices[i] < minPrice{
+            minPrice = prices[i]
+        }
+        profit := prices[i] - minPrice
+        if profit > maxProfit{
+            maxProfit = profit
         }
     }
-
     return maxProfit
+    
 }
